@@ -1,0 +1,89 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container_main {
+  margin-top: 15px;
+}
+
+.composition_wrapper:before {
+  position: absolute;
+  content: '';
+  width: 20px;
+  height: 2px;
+  background-color: black;
+  left: -10px;
+  top: 16px;
+}
+
+.btn_delete_container {
+  margin-top: 7px;
+  text-align: center;
+  & button {
+    width: auto;
+  }
+}
+
+.row_composition:only-child .btn_delete_container button {
+  display: none;
+}
+
+.label_checkbox {
+  > input {
+    opacity: 0;
+    user-select: none;
+  }
+  > input + span {
+    &:before {
+      position: absolute;
+      content: '';
+      opacity: 0;
+      width: 10px;
+      height: 23px;
+      border: 2px solid #439943;
+      border-left: 0px;
+      border-top: 0px;
+      transform: translate3d(-15px, -4px, 0) rotate(45deg);
+      transition: .3s;
+    }
+  }
+  > input:checked + span:before {
+    opacity: 1;
+  }
+  &:before {
+    position: absolute;
+    content: '';
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
+    border-color: #285e8d;
+    border-width: 2px;
+    transform: translate3d(-9px, 1px, 0);
+    border-style: solid;
+  }
+}
+
+.jumbotron {
+  margin-top: 30px;
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.error-message{
+  transform: scaleY(0);
+  transition: 1s;
+  &&.show{
+    transform: scaleY(1);
+  }
+}
+
+@media (min-width: 768px) {
+  .btn_delete_container {
+    margin-top: 0;
+    text-align: left;
+    & button {
+      width: 100%;
+    }
+  }
+}
